@@ -10,58 +10,66 @@ jobs:
     runs-on: self-hosted
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
       - name: Pull latest changes
-        run: |
-          git pull origin ${{ github.ref_name }}
+        run: git pull origin ${{ github.ref_name }}
         working-directory: .
 
+      # === TODOS Cleanup ===
       - name: Stop and clean todos
         run: |
-          docker-compose down -v --remove-orphans || true
-          docker rm -f todos_backend todos_frontend todos_db || true
-          docker network prune -f || true
-          docker image prune -f || true
+          docker-compose down -v --remove-orphans
+          docker rm -f todos_backend todos_frontend todos_db
+          docker network prune -f
+          docker image prune -f
         working-directory: ./todos
+        continue-on-error: true
 
+      # === PROM-GRAPH Cleanup ===
       - name: Stop and clean prom-graph
         run: |
-          docker-compose down -v --remove-orphans || true
+          docker-compose down -v --remove-orphans
         working-directory: ./prom-graph
+        continue-on-error: true
 
+      # === TODOS Build and Deploy ===
       - name: Build and deploy todos
         run: |
           docker-compose build --no-cache
           docker-compose up -d
           echo "Waiting for todos services..."
-          sleep 20
+          Start-Sleep -Seconds 20
           docker-compose ps
         working-directory: ./todos
 
+      # === PROM-GRAPH Build and Deploy ===
       - name: Build and deploy prom-graph
         run: |
           docker-compose build --no-cache
           docker-compose up -d
           echo "Waiting for Prometheus stack..."
-          sleep 15
+          Start-Sleep -Seconds 15
           docker-compose ps
         working-directory: ./prom-graph
 
+      # === Health Check ===
       - name: Verify backend health
         run: |
-          curl -f http://localhost:8000/api/health || exit 1
+          Invoke-WebRequest -Uri http://localhost:8000/api/health -UseBasicParsing
           echo "Backend is healthy!"
 
+      # === Show logs on failure ===
       - name: Show logs on failure
         if: failure()
         run: |
           echo "=== Backend logs ==="
-          docker-compose logs backend || true
+          docker-compose logs backend
           echo "=== Frontend logs ==="
-          docker-compose logs frontend || true
+          docker-compose logs frontend
           echo "=== Database logs ==="
-          docker-compose logs db || true
+          docker-compose logs db
         working-directory: ./todos

@@ -1,0 +1,3523 @@
+[2025-06-06 09:54:20Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2025-06-06 09:54:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:20Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.credentials'
+[2025-06-06 09:54:20Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:20Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:20Z INFO HostContext] Well known config file 'Runner': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.runner'
+[2025-06-06 09:54:20Z INFO Worker] Version: 2.325.0
+[2025-06-06 09:54:20Z INFO Worker] Commit: 71ed7cd46223bd5d61633445946813012b502d54
+[2025-06-06 09:54:20Z INFO Worker] Culture: en-US
+[2025-06-06 09:54:20Z INFO Worker] UI Culture: en-US
+[2025-06-06 09:54:20Z INFO Worker] Waiting to receive the job message from the channel.
+[2025-06-06 09:54:20Z INFO ProcessChannel] Receiving message of length 21722, with hash 'e1744a24f1dc26d0f725e73bbbc47573468a88cab1cc993ce417944a1411ca8b'
+[2025-06-06 09:54:20Z INFO Worker] Message received.
+[2025-06-06 09:54:21Z INFO Worker] Job message:
+ {
+  "fileTable": [
+    ".github/workflows/deploy.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v3",
+        "repositoryType": "GitHub"
+      },
+      "contextName": "__actions_checkout",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 15,
+        "col": 11,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 15,
+              "col": 11,
+              "lit": "fetch-depth"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 15,
+              "col": 24,
+              "lit": "0"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "7e37d3d9-f34c-49a7-892e-b3e3cd47b67f",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 17,
+        "col": 15,
+        "lit": "Pull latest changes"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 3,
+              "file": 1,
+              "line": 18,
+              "col": 14,
+              "expr": "format('git pull origin {0}\n', github.ref_name)"
+            }
+          },
+          {
+            "key": "workingDirectory",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 20,
+              "col": 28,
+              "lit": "."
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "7b3ec1a8-5e14-4276-af9d-6d0b5b9018fe",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 22,
+        "col": 15,
+        "lit": "Stop and clean todos"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 23,
+              "col": 14,
+              "lit": "docker-compose down -v --remove-orphans || true\ndocker rm -f todos_backend todos_frontend todos_db || true\ndocker network prune -f || true\ndocker image prune -f || true\n"
+            }
+          },
+          {
+            "key": "workingDirectory",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 28,
+              "col": 28,
+              "lit": "./todos"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "2890c73d-20bd-41e1-aa8f-c49799b167b0",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 30,
+        "col": 15,
+        "lit": "Stop and clean prom-graph"
+      },
+      "contextName": "__run_3",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 31,
+              "col": 14,
+              "lit": "docker-compose down -v --remove-orphans || true\n"
+            }
+          },
+          {
+            "key": "workingDirectory",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 33,
+              "col": 28,
+              "lit": "./prom-graph"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "0237b0c7-c5f7-42be-8683-9503730a0186",
+      "name": "__run_3"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 35,
+        "col": 15,
+        "lit": "Build and deploy todos"
+      },
+      "contextName": "__run_4",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 36,
+              "col": 14,
+              "lit": "docker-compose build --no-cache\ndocker-compose up -d\necho \"Waiting for todos services...\"\nsleep 20\ndocker-compose ps\n"
+            }
+          },
+          {
+            "key": "workingDirectory",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 42,
+              "col": 28,
+              "lit": "./todos"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "53591499-d30e-4c2f-8771-da326bc7fab4",
+      "name": "__run_4"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 44,
+        "col": 15,
+        "lit": "Build and deploy prom-graph"
+      },
+      "contextName": "__run_5",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 45,
+              "col": 14,
+              "lit": "docker-compose build --no-cache\ndocker-compose up -d\necho \"Waiting for Prometheus stack...\"\nsleep 15\ndocker-compose ps\n"
+            }
+          },
+          {
+            "key": "workingDirectory",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 51,
+              "col": 28,
+              "lit": "./prom-graph"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "5a6d0d61-c22a-4e8b-ad15-879850786e90",
+      "name": "__run_5"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 53,
+        "col": 15,
+        "lit": "Verify backend health"
+      },
+      "contextName": "__run_6",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 54,
+              "col": 14,
+              "lit": "curl -f http://localhost:8000/api/health || exit 1\necho \"Backend is healthy!\"\n"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "f425d9a7-3777-4089-a790-e73ec1592878",
+      "name": "__run_6"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 58,
+        "col": 15,
+        "lit": "Show logs on failure"
+      },
+      "contextName": "__run_7",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 60,
+              "col": 14,
+              "lit": "echo \"=== Backend logs ===\"\ndocker-compose logs backend || true\necho \"=== Frontend logs ===\"\ndocker-compose logs frontend || true\necho \"=== Database logs ===\"\ndocker-compose logs db || true\n"
+            }
+          },
+          {
+            "key": "workingDirectory",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 67,
+              "col": 28,
+              "lit": "./todos"
+            }
+          }
+        ]
+      },
+      "condition": "failure()",
+      "id": "8bd4ed18-12c5-4caa-bf4f-c2ccf9f729dd",
+      "name": "__run_7"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "false"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "deploy"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2.deploy.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "deploy"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "46a2e14c-dde4-5675-98ec-210342e6a8c0",
+  "jobDisplayName": "deploy",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/LCgOGQIreaz9lehNxNm4yhnUli7kSGWoOQNtj8ZjXh3i7FC9TN/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus4.actions.githubusercontent.com/LCgOGQIreaz9lehNxNm4yhnUli7kSGWoOQNtj8ZjXh3i7FC9TN/",
+          "GenerateIdTokenUrl": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-2-azure-eastus.actions.githubusercontent.com/20/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "28b4a1532578b9ccfb4cea6ce087f78a3b7ec96a"
+        },
+        {
+          "k": "repository",
+          "v": "Yatraxy/PromGraph"
+        },
+        {
+          "k": "repository_owner",
+          "v": "Yatraxy"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "61246946"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/Yatraxy/PromGraph.git"
+        },
+        {
+          "k": "run_id",
+          "v": "15487845440"
+        },
+        {
+          "k": "run_number",
+          "v": "2"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "1"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "61246946"
+        },
+        {
+          "k": "actor",
+          "v": "Yatraxy"
+        },
+        {
+          "k": "workflow",
+          "v": "Deploy to Development Machine"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "28b4a1532578b9ccfb4cea6ce087f78a3b7ec96a"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "f632b27c85eb6750b17b1a20bbec3068cba42384"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "y.fallard@dagman.fr"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Yanis Fallard"
+                              },
+                              {
+                                "k": "username",
+                                "v": "Yatraxy"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "y.fallard@dagman.fr"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Yanis Fallard"
+                              },
+                              {
+                                "k": "username",
+                                "v": "Yatraxy"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "28b4a1532578b9ccfb4cea6ce087f78a3b7ec96a"
+                        },
+                        {
+                          "k": "message",
+                          "v": "create fixing test deploy.yml"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2025-06-06T11:54:00+02:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "49b52fd30b80f69cc04b0c0d6adada07419a49d3"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/Yatraxy/PromGraph/commit/28b4a1532578b9ccfb4cea6ce087f78a3b7ec96a"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/Yatraxy/PromGraph/compare/f632b27c85eb...28b4a1532578"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "y.fallard@dagman.fr"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Yanis Fallard"
+                          },
+                          {
+                            "k": "username",
+                            "v": "Yatraxy"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "y.fallard@dagman.fr"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Yanis Fallard"
+                          },
+                          {
+                            "k": "username",
+                            "v": "Yatraxy"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "28b4a1532578b9ccfb4cea6ce087f78a3b7ec96a"
+                    },
+                    {
+                      "k": "message",
+                      "v": "create fixing test deploy.yml"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2025-06-06T11:54:00+02:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "49b52fd30b80f69cc04b0c0d6adada07419a49d3"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/Yatraxy/PromGraph/commit/28b4a1532578b9ccfb4cea6ce087f78a3b7ec96a"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "61246946+Yatraxy@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "Yatraxy"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/Yatraxy/PromGraph.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1749198761.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "Yatraxy/PromGraph"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/Yatraxy/PromGraph.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Yatraxy/PromGraph"
+                    },
+                    {
+                      "k": "id",
+                      "v": 997267434.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "JavaScript"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "PromGraph"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOO3EX6g"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/61246946?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "61246946+Yatraxy@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/Yatraxy/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/Yatraxy/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/Yatraxy/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/Yatraxy/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/Yatraxy"
+                          },
+                          {
+                            "k": "id",
+                            "v": 61246946.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "Yatraxy"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Yatraxy"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "MDQ6VXNlcjYxMjQ2OTQ2"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/Yatraxy/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/Yatraxy/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/Yatraxy/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/Yatraxy/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/Yatraxy/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/Yatraxy"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1749203656.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 3692.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:Yatraxy/PromGraph.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/Yatraxy/PromGraph"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2025-06-06T09:48:58Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/Yatraxy/PromGraph"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/61246946?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/Yatraxy/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/Yatraxy/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/Yatraxy/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/Yatraxy/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/Yatraxy"
+                    },
+                    {
+                      "k": "id",
+                      "v": 61246946.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "Yatraxy"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "MDQ6VXNlcjYxMjQ2OTQ2"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/Yatraxy/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/Yatraxy/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/Yatraxy/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/Yatraxy/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/Yatraxy/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/Yatraxy"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "Yatraxy/PromGraph/.github/workflows/deploy.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "28b4a1532578b9ccfb4cea6ce087f78a3b7ec96a"
+        },
+        {
+          "k": "repository_id",
+          "v": "997267434"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "Yatraxy"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOA6aN4g"
+}
+[2025-06-06 09:54:21Z INFO JobRunner] Job ID 46a2e14c-dde4-5675-98ec-210342e6a8c0
+[2025-06-06 09:54:21Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin\Runner.Worker.dll
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO ConfigurationStore] binPath: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO ConfigurationStore] RootFolder: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known config file 'Runner': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.runner'
+[2025-06-06 09:54:21Z INFO ConfigurationStore] ConfigFilePath: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.runner
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.runner_migrated'
+[2025-06-06 09:54:21Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.runner_migrated
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.credentials'
+[2025-06-06 09:54:21Z INFO ConfigurationStore] CredFilePath: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.credentials
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.credentials_migrated'
+[2025-06-06 09:54:21Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.credentials_migrated
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known config file 'Service': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.service'
+[2025-06-06 09:54:21Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.service
+[2025-06-06 09:54:21Z INFO ConfigurationStore] Read setting file: 395 chars
+[2025-06-06 09:54:21Z INFO JobRunner] Initializing launch client
+[2025-06-06 09:54:21Z INFO JobServerQueue] Initializing results client
+[2025-06-06 09:54:21Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2025-06-06 09:54:21Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2025-06-06 09:54:21Z INFO JobServerQueue] Start process web console line queue.
+[2025-06-06 09:54:21Z INFO JobServerQueue] Start process file upload queue.
+[2025-06-06 09:54:21Z INFO JobServerQueue] Start results file upload queue.
+[2025-06-06 09:54:21Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-06-06 09:54:21Z INFO JobServerQueue] Start process timeline update queue.
+[2025-06-06 09:54:21Z INFO ExecutionContext] Initializing Job context
+[2025-06-06 09:54:21Z INFO ExecutionContext] Initialize GitHub context
+[2025-06-06 09:54:21Z INFO ExecutionContext] Initialize Env context
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:21Z INFO JobRunner] Starting the job execution context.
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO JobRunner] Validating directory permissions for: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Tools': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_tool'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:21Z INFO JobRunner] Getting job extension.
+[2025-06-06 09:54:21Z INFO JobRunner] Initialize job. Getting all job steps.
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.credentials'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\.setup_info'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_PipelineMapping\Yatraxy/PromGraph\PipelineFolder.json
+[2025-06-06 09:54:21Z INFO PipelineDirectoryManager] Updating job run properties.
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO JobExtension] Downloading actions
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:21Z INFO Worker] Listening for cancel message from the channel.
+[2025-06-06 09:54:21Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2025-06-06 09:54:21Z INFO ResultServer] Successfully started websocket client.
+[2025-06-06 09:54:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record '69f96a7e-cd60-4b35-9485-86616e4e112a', success rate: 1/1.
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:21Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:21Z INFO ActionManager] Save archive 'https://api.github.com/repos/actions/checkout/zipball/f43a0e5ff2bd294095638e18286ca9a3d1956744' into C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions\_temp_f9942fb9-2c08-4535-a1ca-b18689bc37e8\0d9ca3f1-0849-4033-84ab-4b35ebc3dc97.zip.
+[2025-06-06 09:54:21Z INFO JobServerQueue] Try to append 1 batches web console lines for record '69f96a7e-cd60-4b35-9485-86616e4e112a', success rate: 1/1.
+[2025-06-06 09:54:21Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2025-06-06 09:54:21Z INFO ActionManager] Request URL: https://api.github.com/repos/actions/checkout/zipball/f43a0e5ff2bd294095638e18286ca9a3d1956744 X-GitHub-Request-Id: FD39:16E7F8:6C24A5:856ED0:6842BACD Http Status: OK
+[2025-06-06 09:54:22Z INFO ActionManager] Finished getting action repository.
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-06-06 09:54:22Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:22Z INFO ActionManager] Load action that reference repository from 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions\actions\checkout\v3'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-06-06 09:54:22Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-06-06 09:54:22Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-06-06 09:54:22Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-06-06 09:54:22Z INFO JobExtension] Adding .
+[2025-06-06 09:54:22Z INFO JobExtension] Adding .
+[2025-06-06 09:54:22Z INFO JobExtension] Adding .
+[2025-06-06 09:54:22Z INFO JobExtension] Adding .
+[2025-06-06 09:54:22Z INFO JobExtension] Adding .
+[2025-06-06 09:54:22Z INFO JobExtension] Adding .
+[2025-06-06 09:54:22Z INFO JobExtension] Adding .
+[2025-06-06 09:54:22Z INFO JobExtension] Adding .
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO JobExtension] Total accessible running process: 357.
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO JobExtension] Start checking service connectivity in background.
+[2025-06-06 09:54:22Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "69f96a7e-cd60-4b35-9485-86616e4e112a",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 2,
+  "startTime": "2025-06-06T09:54:21.1266561Z",
+  "finishTime": "2025-06-06T09:54:22.1282113Z"
+}.
+[2025-06-06 09:54:22Z INFO JobRunner] Total job steps: 8.
+[2025-06-06 09:54:22Z INFO JobRunner] Run all job steps.
+[2025-06-06 09:54:22Z INFO StepsRunner] Processing step: DisplayName='Run actions/checkout@v3'
+[2025-06-06 09:54:22Z INFO StepsRunner] Evaluating: success()
+[2025-06-06 09:54:22Z INFO StepsRunner] Result: true
+[2025-06-06 09:54:22Z INFO StepsRunner] Starting the step.
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO StepsRunner] Which2: 'chcp'
+[2025-06-06 09:54:22Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper] Process started with process id 44112, waiting for process exit.
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper] Finished process 44112 with exit code 0, and elapsed time 00:00:00.0079121.
+[2025-06-06 09:54:22Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:22Z INFO ActionManager] Load action that reference repository from 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions\actions\checkout\v3'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-06-06 09:54:22Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-06-06 09:54:22Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-06-06 09:54:22Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-06-06 09:54:22Z INFO ExecutionContext] Reserve record order 10 to 18 for post job actions.
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:22Z INFO JobServerQueue] Try to append 1 batches web console lines for record '69f96a7e-cd60-4b35-9485-86616e4e112a', success rate: 1/1.
+[2025-06-06 09:54:22Z INFO ExecutionContext] Write event payload to C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:22Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "Yatraxy/PromGraph"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 60,
+  "col": 14,
+  "lit": ""
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "false"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "false"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:22Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-06-06 09:54:22Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command error
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command group
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-06-06 09:54:22Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:22Z INFO HostContext] Well known directory 'Externals': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\externals'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\externals\node20\bin\node.exe'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions\actions\checkout\v3\dist/index.js"'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\PromGraph\PromGraph'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:22Z INFO ProcessInvokerWrapper] Process started with process id 47448, waiting for process exit.
+[2025-06-06 09:54:22Z INFO AddMaskCommandExtension] Add new secret mask with length of 76
+[2025-06-06 09:54:22Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7e37d3d9-f34c-49a7-892e-b3e3cd47b67f', success rate: 1/1.
+[2025-06-06 09:54:22Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7e37d3d9-f34c-49a7-892e-b3e3cd47b67f', success rate: 1/1.
+[2025-06-06 09:54:23Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-06-06 09:54:23Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag\blocks\c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2_69f96a7e-cd60-4b35-9485-86616e4e112a.1
+[2025-06-06 09:54:23Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-06-06 09:54:23Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7e37d3d9-f34c-49a7-892e-b3e3cd47b67f', success rate: 1/1.
+[2025-06-06 09:54:23Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-06-06 09:54:23Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7e37d3d9-f34c-49a7-892e-b3e3cd47b67f', success rate: 1/1.
+[2025-06-06 09:54:24Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7e37d3d9-f34c-49a7-892e-b3e3cd47b67f', success rate: 1/1.
+[2025-06-06 09:54:24Z INFO JobServerQueue] Try to append 4 batches web console lines for record '7e37d3d9-f34c-49a7-892e-b3e3cd47b67f', success rate: 4/4.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Finished process 47448 with exit code 0, and elapsed time 00:00:02.8450000.
+[2025-06-06 09:54:25Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_runner_file_commands\step_summary_5a3dcd66-482f-465b-a36a-b6cfe14ee669) is empty; skipping attachment upload
+[2025-06-06 09:54:25Z INFO StepsRunner] Step result: 
+[2025-06-06 09:54:25Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v3",
+  "type": "node20",
+  "stage": "Main",
+  "stepId": "7e37d3d9-f34c-49a7-892e-b3e3cd47b67f",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 3,
+  "startTime": "2025-06-06T09:54:22.1350219Z",
+  "finishTime": "2025-06-06T09:54:25.0219593Z"
+}.
+[2025-06-06 09:54:25Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-06-06 09:54:25Z INFO StepsRunner] Current state: job state = ''
+[2025-06-06 09:54:25Z INFO StepsRunner] Processing step: DisplayName='Pull latest changes'
+[2025-06-06 09:54:25Z INFO StepsRunner] Evaluating: success()
+[2025-06-06 09:54:25Z INFO StepsRunner] Result: true
+[2025-06-06 09:54:25Z INFO StepsRunner] Starting the step.
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO StepsRunner] Which2: 'chcp'
+[2025-06-06 09:54:25Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Process started with process id 45488, waiting for process exit.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Finished process 45488 with exit code 0, and elapsed time 00:00:00.0052434.
+[2025-06-06 09:54:25Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:25Z INFO ExecutionContext] Write event payload to C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:25Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-06-06 09:54:25Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command error
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command group
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-06-06 09:54:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7e37d3d9-f34c-49a7-892e-b3e3cd47b67f', success rate: 1/1.
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-06-06 09:54:25Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-06-06 09:54:25Z INFO ScriptHandler] Defaulting to powershell
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'powershell'
+[2025-06-06 09:54:25Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-06-06 09:54:25Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-06-06 09:54:25Z INFO ScriptHandler] Defaulting to powershell
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'powershell'
+[2025-06-06 09:54:25Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\3fad3cf1-9323-45c2-8f4b-14757ab1a0e4.ps1'"'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\PromGraph\PromGraph\.'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Process started with process id 31540, waiting for process exit.
+[2025-06-06 09:54:25Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2025-06-06 09:54:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7b3ec1a8-5e14-4276-af9d-6d0b5b9018fe', success rate: 1/1.
+[2025-06-06 09:54:25Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-06-06 09:54:25Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag\blocks\c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2_7e37d3d9-f34c-49a7-892e-b3e3cd47b67f.1
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Finished process 31540 with exit code 0, and elapsed time 00:00:00.6760064.
+[2025-06-06 09:54:25Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_runner_file_commands\step_summary_b144ff62-0f6e-4732-8bd0-c68003cb8e70) is empty; skipping attachment upload
+[2025-06-06 09:54:25Z INFO StepsRunner] Step result: 
+[2025-06-06 09:54:25Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "7b3ec1a8-5e14-4276-af9d-6d0b5b9018fe",
+  "stepContextName": "__run",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-06-06T09:54:25.0225725Z",
+  "finishTime": "2025-06-06T09:54:25.7215475Z"
+}.
+[2025-06-06 09:54:25Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-06-06 09:54:25Z INFO StepsRunner] Current state: job state = ''
+[2025-06-06 09:54:25Z INFO StepsRunner] Processing step: DisplayName='Stop and clean todos'
+[2025-06-06 09:54:25Z INFO StepsRunner] Evaluating: success()
+[2025-06-06 09:54:25Z INFO StepsRunner] Result: true
+[2025-06-06 09:54:25Z INFO StepsRunner] Starting the step.
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO StepsRunner] Which2: 'chcp'
+[2025-06-06 09:54:25Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Process started with process id 44000, waiting for process exit.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Finished process 44000 with exit code 0, and elapsed time 00:00:00.0060422.
+[2025-06-06 09:54:25Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:25Z INFO ExecutionContext] Write event payload to C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:25Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-06-06 09:54:25Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command error
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command group
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-06-06 09:54:25Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-06-06 09:54:25Z INFO ScriptHandler] Defaulting to powershell
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'powershell'
+[2025-06-06 09:54:25Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-06-06 09:54:25Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-06-06 09:54:25Z INFO ScriptHandler] Defaulting to powershell
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'powershell'
+[2025-06-06 09:54:25Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\c178ff72-d97d-4bd1-87f5-e10a4840929e.ps1'"'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\PromGraph\PromGraph\./todos'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Process started with process id 42468, waiting for process exit.
+[2025-06-06 09:54:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '7b3ec1a8-5e14-4276-af9d-6d0b5b9018fe', success rate: 1/1.
+[2025-06-06 09:54:25Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2890c73d-20bd-41e1-aa8f-c49799b167b0', success rate: 1/1.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Finished process 42468 with exit code 1, and elapsed time 00:00:00.1685476.
+[2025-06-06 09:54:25Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_runner_file_commands\step_summary_3af5b2f9-ba1b-41c8-bcbe-45778f39722c) is empty; skipping attachment upload
+[2025-06-06 09:54:25Z INFO StepsRunner] Step result: Failed
+[2025-06-06 09:54:25Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "2890c73d-20bd-41e1-aa8f-c49799b167b0",
+  "stepContextName": "__run_2",
+  "result": "failed",
+  "errorMessages": [
+    "Process completed with exit code 1."
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-06-06T09:54:25.7222012Z",
+  "finishTime": "2025-06-06T09:54:25.9118578Z"
+}.
+[2025-06-06 09:54:25Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2025-06-06 09:54:25Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-06-06 09:54:25Z INFO StepsRunner] Processing step: DisplayName='Stop and clean prom-graph'
+[2025-06-06 09:54:25Z INFO StepsRunner] Evaluating: success()
+[2025-06-06 09:54:25Z INFO StepsRunner] Result: false
+[2025-06-06 09:54:25Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-06-06 09:54:25Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-06-06 09:54:25Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-06-06 09:54:25Z INFO StepsRunner] Processing step: DisplayName='Build and deploy todos'
+[2025-06-06 09:54:25Z INFO StepsRunner] Evaluating: success()
+[2025-06-06 09:54:25Z INFO StepsRunner] Result: false
+[2025-06-06 09:54:25Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-06-06 09:54:25Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-06-06 09:54:25Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-06-06 09:54:25Z INFO StepsRunner] Processing step: DisplayName='Build and deploy prom-graph'
+[2025-06-06 09:54:25Z INFO StepsRunner] Evaluating: success()
+[2025-06-06 09:54:25Z INFO StepsRunner] Result: false
+[2025-06-06 09:54:25Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-06-06 09:54:25Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-06-06 09:54:25Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-06-06 09:54:25Z INFO StepsRunner] Processing step: DisplayName='Verify backend health'
+[2025-06-06 09:54:25Z INFO StepsRunner] Evaluating: success()
+[2025-06-06 09:54:25Z INFO StepsRunner] Result: false
+[2025-06-06 09:54:25Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2025-06-06 09:54:25Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2025-06-06 09:54:25Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-06-06 09:54:25Z INFO StepsRunner] Processing step: DisplayName='Show logs on failure'
+[2025-06-06 09:54:25Z INFO StepsRunner] Evaluating: failure()
+[2025-06-06 09:54:25Z INFO StepsRunner] Result: true
+[2025-06-06 09:54:25Z INFO StepsRunner] Starting the step.
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO StepsRunner] Which2: 'chcp'
+[2025-06-06 09:54:25Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Process started with process id 44156, waiting for process exit.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Finished process 44156 with exit code 0, and elapsed time 00:00:00.0058356.
+[2025-06-06 09:54:25Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:25Z INFO ExecutionContext] Write event payload to C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:25Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-06-06 09:54:25Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command error
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command group
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-06-06 09:54:25Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-06-06 09:54:25Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-06-06 09:54:25Z INFO ScriptHandler] Defaulting to powershell
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'powershell'
+[2025-06-06 09:54:25Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:25Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'pwsh'
+[2025-06-06 09:54:25Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2025-06-06 09:54:25Z INFO ScriptHandler] Defaulting to powershell
+[2025-06-06 09:54:25Z INFO ScriptHandler] Which2: 'powershell'
+[2025-06-06 09:54:25Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\e0e95547-0e8b-4eca-8ada-ce4abe566c31.ps1'"'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\PromGraph\PromGraph\./todos'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:25Z INFO ProcessInvokerWrapper] Process started with process id 11104, waiting for process exit.
+[2025-06-06 09:54:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '2890c73d-20bd-41e1-aa8f-c49799b167b0', success rate: 1/1.
+[2025-06-06 09:54:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '8bd4ed18-12c5-4caa-bf4f-c2ccf9f729dd', success rate: 1/1.
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] Finished process 11104 with exit code 1, and elapsed time 00:00:00.1641395.
+[2025-06-06 09:54:26Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_runner_file_commands\step_summary_a32a20f5-4452-42ef-a3ce-22f429394fa2) is empty; skipping attachment upload
+[2025-06-06 09:54:26Z INFO StepsRunner] Step result: Failed
+[2025-06-06 09:54:26Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "8bd4ed18-12c5-4caa-bf4f-c2ccf9f729dd",
+  "stepContextName": "__run_7",
+  "result": "failed",
+  "errorMessages": [
+    "Process completed with exit code 1."
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-06-06T09:54:25.9138921Z",
+  "finishTime": "2025-06-06T09:54:26.0991829Z"
+}.
+[2025-06-06 09:54:26Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2025-06-06 09:54:26Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-06-06 09:54:26Z INFO StepsRunner] Processing step: DisplayName='Post Run actions/checkout@v3'
+[2025-06-06 09:54:26Z INFO StepsRunner] Evaluating: always()
+[2025-06-06 09:54:26Z INFO StepsRunner] Result: true
+[2025-06-06 09:54:26Z INFO StepsRunner] Starting the step.
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:26Z INFO StepsRunner] Which2: 'chcp'
+[2025-06-06 09:54:26Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] Process started with process id 47984, waiting for process exit.
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] Finished process 47984 with exit code 0, and elapsed time 00:00:00.0053843.
+[2025-06-06 09:54:26Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:26Z INFO ActionManager] Load action that reference repository from 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions\actions\checkout\v3'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Actions': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions'
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 50,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 53,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 56,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 61,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 67,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 68,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 71,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node16",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2025-06-06 09:54:26Z INFO ActionManager] Action pre node.js file: N/A.
+[2025-06-06 09:54:26Z INFO ActionManager] Action node.js file: dist/index.js.
+[2025-06-06 09:54:26Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:26Z INFO ExecutionContext] Write event payload to C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_github_workflow\event.json
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Work': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Temp': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp'
+[2025-06-06 09:54:26Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "Yatraxy/PromGraph"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'ref': default value evaluate result: ""
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'ssh-key': default value evaluate result: ""
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'ssh-known-hosts': default value evaluate result: ""
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 50,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'path': default value evaluate result: ""
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 55,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 60,
+  "col": 14,
+  "lit": ""
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 70,
+  "col": 14,
+  "lit": "false"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "false"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "false"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "true"
+}
+[2025-06-06 09:54:26Z INFO ActionManifestManager] Input 'github-server-url': default value evaluate result: ""
+[2025-06-06 09:54:26Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command set-env
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command set-output
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command save-state
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command add-path
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command warning
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command error
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command notice
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command debug
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command group
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2025-06-06 09:54:26Z INFO ActionCommandManager] Register action command extension for command echo
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Externals': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\externals'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] Starting process:
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\externals\node20\bin\node.exe'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_actions\actions\checkout\v3\dist/index.js"'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\PromGraph\PromGraph'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] Process started with process id 43736, waiting for process exit.
+[2025-06-06 09:54:26Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2025-06-06 09:54:26Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2025-06-06 09:54:26Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2025-06-06 09:54:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '8bd4ed18-12c5-4caa-bf4f-c2ccf9f729dd', success rate: 1/1.
+[2025-06-06 09:54:26Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0d1d3930-dcad-42db-8648-1b94e372a525', success rate: 1/1.
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2025-06-06 09:54:26Z INFO ProcessInvokerWrapper] Finished process 43736 with exit code 0, and elapsed time 00:00:00.6150833.
+[2025-06-06 09:54:26Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp\_runner_file_commands\step_summary_dcc55f44-1eef-4448-a6ec-57307feb86e2) is empty; skipping attachment upload
+[2025-06-06 09:54:26Z INFO StepsRunner] Step result: 
+[2025-06-06 09:54:26Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v3",
+  "type": "node20",
+  "stage": "Post",
+  "stepId": "0d1d3930-dcad-42db-8648-1b94e372a525",
+  "result": "succeeded",
+  "errorMessages": [
+    "The process 'C:\\Program Files\\Git\\cmd\\git.exe' failed with exit code 128"
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-06-06T09:54:26.0998239Z",
+  "finishTime": "2025-06-06T09:54:26.7278019Z"
+}.
+[2025-06-06 09:54:26Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2025-06-06 09:54:26Z INFO StepsRunner] Current state: job state = 'Failed'
+[2025-06-06 09:54:26Z INFO JobRunner] Finalize job.
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:26Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:26Z INFO JobExtension] Initialize Env context
+[2025-06-06 09:54:26Z INFO JobExtension] Initialize steps context
+[2025-06-06 09:54:26Z INFO JobExtension] Total accessible running process: 362.
+[2025-06-06 09:54:26Z INFO JobExtension] Inspecting process environment variables. PID: 44536 (docker)
+[2025-06-06 09:54:26Z INFO JobExtension] Inspecting process environment variables. PID: 45404 (conhost)
+[2025-06-06 09:54:26Z INFO JobExtension] Inspecting process environment variables. PID: 44976 (docker)
+[2025-06-06 09:54:26Z INFO JobExtension] Inspecting process environment variables. PID: 10592 (docker)
+[2025-06-06 09:54:26Z INFO JobExtension] Inspecting process environment variables. PID: 45712 (conhost)
+[2025-06-06 09:54:26Z INFO JobExtension] Inspecting process environment variables. PID: 45120 (conhost)
+[2025-06-06 09:54:26Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "9b48de7e-727e-4f51-b2db-e5283bd7ec1b",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 1,
+  "startTime": "2025-06-06T09:54:26.7310919Z",
+  "finishTime": "2025-06-06T09:54:26.7593409Z"
+}.
+[2025-06-06 09:54:26Z INFO JobRunner] Job result after all job steps finish: Failed
+[2025-06-06 09:54:26Z INFO JobRunner] Completing the job execution context.
+[2025-06-06 09:54:26Z INFO JobRunner] Shutting down the job server queue.
+[2025-06-06 09:54:26Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2025-06-06 09:54:27Z INFO JobServerQueue] All queue process task stopped.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Try to append 1 batches web console lines for record '0d1d3930-dcad-42db-8648-1b94e372a525', success rate: 1/1.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Try to append 1 batches web console lines for record '9b48de7e-727e-4f51-b2db-e5283bd7ec1b', success rate: 1/1.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Web console line queue drained.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2025-06-06 09:54:27Z INFO JobServerQueue] File upload queue drained.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Starting results-based upload queue...
+[2025-06-06 09:54:27Z INFO JobServerQueue] Uploading 6 file(s) in one shot through results service.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag\blocks\c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2_7b3ec1a8-5e14-4276-af9d-6d0b5b9018fe.1
+[2025-06-06 09:54:27Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag\blocks\c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2_2890c73d-20bd-41e1-aa8f-c49799b167b0.1
+[2025-06-06 09:54:27Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-06-06 09:54:27Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag\blocks\c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2_8bd4ed18-12c5-4caa-bf4f-c2ccf9f729dd.1
+[2025-06-06 09:54:28Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-06-06 09:54:28Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag\blocks\c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2_0d1d3930-dcad-42db-8648-1b94e372a525.1
+[2025-06-06 09:54:28Z INFO JobServerQueue] Got a step log file to send to results service.
+[2025-06-06 09:54:28Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag\blocks\c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2_9b48de7e-727e-4f51-b2db-e5283bd7ec1b.1
+[2025-06-06 09:54:28Z INFO JobServerQueue] Got a job log file to send to results service.
+[2025-06-06 09:54:28Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag\blocks\c4d8d1ad-6bc3-41f9-aabb-09fe25bedcc2_46a2e14c-dde4-5675-98ec-210342e6a8c0.1
+[2025-06-06 09:54:28Z INFO JobServerQueue] Tried to upload 6 file(s) to results, success rate: 6/6.
+[2025-06-06 09:54:28Z INFO JobServerQueue] Results upload queue drained.
+[2025-06-06 09:54:29Z INFO JobServerQueue] Timeline update queue drained.
+[2025-06-06 09:54:29Z INFO JobServerQueue] Disposing job server ...
+[2025-06-06 09:54:29Z INFO JobServerQueue] Disposing results server ...
+[2025-06-06 09:54:29Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2025-06-06 09:54:29Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_work\_temp
+[2025-06-06 09:54:29Z INFO HostContext] Well known directory 'Bin': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\bin'
+[2025-06-06 09:54:29Z INFO HostContext] Well known directory 'Root': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner'
+[2025-06-06 09:54:29Z INFO HostContext] Well known directory 'Diag': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag'
+[2025-06-06 09:54:29Z INFO HostContext] Well known config file 'Telemetry': 'C:\Users\Yanis\Desktop\3WA\Docker\Prometheus-graphana-TP\actions-runner\_diag\.telemetry'
+[2025-06-06 09:54:29Z INFO JobRunner] Raising job completed against run service
+[2025-06-06 09:54:29Z INFO Worker] Job completed.
