@@ -36,6 +36,10 @@ jobs:
         working-directory: ./prom-graph
         continue-on-error: true
 
+      - name: Create monitoring network
+        run : |
+          docker network create monitoring network 
+
       # === TODOS Build and Deploy ===
       - name: Build and deploy todos
         run: |
@@ -59,8 +63,25 @@ jobs:
       # === Health Check ===
       - name: Verify backend health
         run: |
-          Invoke-WebRequest -Uri http://localhost:8080/api/health -UseBasicParsing
-          echo "Backend is healthy!"
+          $maxAttempts = 12
+          $attempt = 0
+          while ($attempt -lt $maxAttempts) {
+            try {
+              $res = Invoke-WebRequest -Uri http://localhost:8080/api/health -UseBasicParsing
+              if ($res.StatusCode -eq 200) {
+                Write-Host "✅ Backend is healthy through Nginx!"
+                exit 0
+              } else {
+                Write-Warning "⚠️ Status: $($res.StatusCode). Waiting..."
+              }
+            } catch {
+              Write-Host "⏳ Attempt $($attempt+1)/$maxAttempts failed. Retrying in 5s..."
+            }
+            Start-Sleep -Seconds 5
+            $attempt++
+          }
+          Write-Error "❌ Backend (via Nginx) did not respond after $maxAttempts attempts."
+          exit 1
 
       # === Show logs on failure ===
       - name: Show logs on failure
