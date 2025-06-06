@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 2,
+  "agentName": "DESKTOP-0GT25V9",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus4.actions.githubusercontent.com/LCgOGQIreaz9lehNxNm4yhnUli7kSGWoOQNtj8ZjXh3i7FC9TN/",
+  "gitHubUrl": "https://github.com/Yatraxy/PromGraph",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}
