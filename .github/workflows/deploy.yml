@@ -38,7 +38,7 @@ jobs:
 
       - name: Create monitoring network
         run : |
-          docker network create monitoring network 
+          docker network create monitoring-network 
 
       # === TODOS Build and Deploy ===
       - name: Build and deploy todos
