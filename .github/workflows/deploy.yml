@@ -1,62 +1,67 @@
-# .github/workflows/deploy.yml
 name: Deploy to Development Machine
+
 on:
   push:
     branches: [ main, master, develop ]
   workflow_dispatch:
+
 jobs:
   deploy:
     runs-on: self-hosted
+
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          
-      - name: Stop and clean existing containers
-        run: |
-          # Arrêter tous les containers liés au projet
-          docker-compose down -v --remove-orphans || true
-          
-          # Supprimer les containers par nom s'ils existent encore
-          docker rm -f medisecure_backend medisecure_frontend medisecure_db || true
-          
-          # Nettoyer les réseaux orphelins
-          docker network prune -f || true
-          
-          # Supprimer les images non utilisées pour forcer la reconstruction
-          docker image prune -f || true
-          
+
       - name: Pull latest changes
         run: |
           git pull origin ${{ github.ref_name }}
-          
-      - name: Build and deploy application
+        working-directory: .
+
+      - name: Stop and clean todos
         run: |
-          # Construire sans cache pour s'assurer d'avoir les dernières modifications
+          docker-compose down -v --remove-orphans || true
+          docker rm -f todos_backend todos_frontend todos_db || true
+          docker network prune -f || true
+          docker image prune -f || true
+        working-directory: ./todos
+
+      - name: Stop and clean prom-graph
+        run: |
+          docker-compose down -v --remove-orphans || true
+        working-directory: ./prom-graph
+
+      - name: Build and deploy todos
+        run: |
           docker-compose build --no-cache
-          
-          # Démarrer les services
           docker-compose up -d
-          
-          # Attendre que les services soient prêts
-          echo "Waiting for services to be ready..."
-          sleep 30
-          
-          # Vérifier que les services sont en cours d'exécution
+          echo "Waiting for todos services..."
+          sleep 20
           docker-compose ps
-          
-      - name: Verify deployment
+        working-directory: ./todos
+
+      - name: Build and deploy prom-graph
         run: |
-          # Vérifier que l'API répond
+          docker-compose build --no-cache
+          docker-compose up -d
+          echo "Waiting for Prometheus stack..."
+          sleep 15
+          docker-compose ps
+        working-directory: ./prom-graph
+
+      - name: Verify backend health
+        run: |
           curl -f http://localhost:8000/api/health || exit 1
-          echo "Deployment completed successfully!"
-          
+          echo "Backend is healthy!"
+
       - name: Show logs on failure
         if: failure()
         run: |
           echo "=== Backend logs ==="
-          docker-compose logs backend
+          docker-compose logs backend || true
           echo "=== Frontend logs ==="
-          docker-compose logs frontend
+          docker-compose logs frontend || true
           echo "=== Database logs ==="
-          docker-compose logs db```
+          docker-compose logs db || true
+        working-directory: ./todos

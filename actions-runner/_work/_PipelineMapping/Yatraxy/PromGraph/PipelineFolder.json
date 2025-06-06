@@ -1,0 +1,12 @@
+﻿{
+  "repositoryName": "Yatraxy/PromGraph",
+  "pipelineDirectory": "PromGraph",
+  "workspaceDirectory": "PromGraph\\PromGraph",
+  "repositories": {
+    "Yatraxy/PromGraph": {
+      "repositoryPath": "PromGraph\\PromGraph",
+      "lastRunOn": "06/06/2025 11:48:58 +02:00"
+    }
+  },
+  "lastRunOn": "06/06/2025 11:48:58 +02:00"
+}
