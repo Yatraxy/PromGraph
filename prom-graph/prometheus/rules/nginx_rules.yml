@@ -1,0 +1,38 @@
+groups:
+  - name: nginx.rules
+    rules:
+      # Règle pour calculer le taux de requêtes par seconde
+      - record: nginx:request_rate_5m
+        expr: rate(nginx_http_requests_total[5m])
+        
+  - name: nginx.alerts
+    rules:
+      # Alerte : Trop de requêtes par seconde
+      - alert: HighRequestRate
+        expr: nginx:request_rate_5m > 10
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Taux de requêtes élevé détecté"
+          description: "Le serveur Nginx reçoit {{ $value }} requêtes/seconde depuis plus d'1 minute"
+          
+      # Alerte : Temps de réponse élevé
+      - alert: HighResponseTime
+        expr: nginx:response_time_avg_5m > 0.5
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Temps de réponse élevé"
+          description: "Temps de réponse moyen : {{ $value }}s depuis plus de 2 minutes"
+          
+      # Alerte : Nginx down
+      - alert: NginxDown
+        expr: up{job="nginx"} == 0
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: "Nginx est indisponible"
+          description: "Le serveur Nginx ne répond plus depuis plus d'1 minute"

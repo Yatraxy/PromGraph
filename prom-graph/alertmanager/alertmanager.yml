@@ -1,0 +1,49 @@
+# Configuration globale
+global:
+  smtp_smarthost: 'localhost:587'
+  smtp_from: 'alertmanager@example.com'
+
+# Modèles d'alerte
+templates:
+  - '/etc/alertmanager/templates/*.tmpl'
+
+# Routes des alertes
+route:
+  group_by: ['alertname']           # Grouper par nom d'alerte
+  group_wait: 10s                   # Attendre 10s avant d'envoyer un groupe
+  group_interval: 10s               # Intervalle entre les groupes
+  repeat_interval: 1h               # Répéter toutes les heures
+  receiver: 'web.hook'              # Récepteur par défaut
+  
+  # Routes spécifiques
+  routes:
+    - match:
+        severity: critical
+      receiver: 'critical-alerts'
+    - match:
+        severity: warning  
+      receiver: 'warning-alerts'
+
+# Récepteurs d'alerte
+receivers:
+  - name: 'web.hook'
+    webhook_configs:
+      - url: 'http://localhost:5001/'
+        
+  - name: 'critical-alerts'
+    webhook_configs:
+      - url: 'http://localhost:5001/critical'
+        send_resolved: true
+        
+  - name: 'warning-alerts'
+    webhook_configs:
+      - url: 'http://localhost:5001/warning'
+        send_resolved: true
+
+# Suppressions d'alerte
+inhibit_rules:
+  - source_match:
+      severity: 'critical'
+    target_match:
+      severity: 'warning'
+    equal: ['alertname', 'dev', 'instance']
