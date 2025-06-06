@@ -35,6 +35,10 @@ async function main() {
     }
   });
 
+  app.get('/api/health', (req, res) => {
+  res.status(200).send('OK');
+});
+
   app.listen(port, () => {
     console.log(`Server is listening on port: ${port}`);
   });

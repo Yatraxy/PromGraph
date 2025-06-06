@@ -59,7 +59,7 @@ jobs:
       # === Health Check ===
       - name: Verify backend health
         run: |
-          Invoke-WebRequest -Uri http://localhost:8000/api/health -UseBasicParsing
+          Invoke-WebRequest -Uri http://localhost:8080/api/health -UseBasicParsing
           echo "Backend is healthy!"
 
       # === Show logs on failure ===
