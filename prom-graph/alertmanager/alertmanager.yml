@@ -28,16 +28,16 @@ route:
 receivers:
   - name: 'web.hook'
     webhook_configs:
-      - url: 'http://localhost:5001/'
+      - url: 'https://webhook.site/e6176ab2-f49a-4716-8faf-264feeab8056/'
         
   - name: 'critical-alerts'
     webhook_configs:
-      - url: 'http://localhost:5001/critical'
+      - url: 'https://webhook.site/e6176ab2-f49a-4716-8faf-264feeab8056/critical'
         send_resolved: true
         
   - name: 'warning-alerts'
     webhook_configs:
-      - url: 'http://localhost:5001/warning'
+      - url: 'https://webhook.site/e6176ab2-f49a-4716-8faf-264feeab8056/warning'
         send_resolved: true
 
 # Suppressions d'alerte
